@@ -1,7 +1,9 @@
 from django.urls import path
 
-from content.views import ContentView
+from content.views import ContentDetailView, ContentFilterView, ContentView
 
 urlpatterns = [
-    path("content", ContentView.as_view()),
+    path("contents/", ContentView.as_view()),
+    path("contents/filter/", ContentFilterView.as_view()),
+    path("contents/<content_id>/", ContentDetailView.as_view()),
 ]
